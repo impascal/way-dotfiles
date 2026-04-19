@@ -1,0 +1,66 @@
+@define-color bg_dark #282828;
+@define-color fg_dark #FBF1C7;
+
+@define-color bg_light #EBDBB2;
+@define-color fg_light #282828;
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: IosevkaNerdFont;
+    font-weight: 500;
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @fg_dark;
+}
+
+#waybar > box {
+  margin: 5px 5px 0px 5px;
+  padding: 0px 5px;
+  background-color: @bg_dark;
+  border-radius: 20px;
+}
+
+tooltip {
+  background: @bg_light;
+  border: 2px solid @fg_light;
+  border-radius: 10px;
+}
+
+tooltip label {
+  font-weight: 400;
+  color: @fg_light;
+}
+
+#workspaces button {
+    margin: 7px 5px;
+    padding: 2px 10px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    
+    background: @bg_dark;
+    color: @fg_dark;
+}
+
+label.module, #workspaces button.active, #workspaces button.focused {
+    margin: 7px 5px;
+    padding: 2px 10px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    
+    background: @bg_light;
+    color: @fg_light;
+}
+
+#tray {
+    margin: 5px 0px;
+    padding: 2px 10px 2px 10px;
+    border: 0px solid transparent;
+    border-radius: 15px;
+    
+    background: inherit;    
+}

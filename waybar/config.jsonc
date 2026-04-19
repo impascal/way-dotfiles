@@ -1,0 +1,85 @@
+{
+    "reload_style_on_change": true,
+    "font": "IosevkaNerdFont",
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["custom/launcher", "clock"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["backlight", "pulseaudio", "network", "temperature", "battery", "tray"],
+    
+    "backlight": {
+        "format": "{icon}  {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"]
+    },
+    
+    "pulseaudio": {
+        "format": "{format_source} {icon} {volume}%",
+        "format-muted": "{format_source} 󰖁 {volume}%",
+        "format-source": "󰍬",
+        "format-source-muted": "󰍭",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "scroll-step": 1,
+        "ignored-sinks": ["Easy Effects Sink"]
+    },
+
+    "network": {
+        "format-wifi": "{icon} ",
+        "format-ethernet": "{icon} ",
+        "format-disconnected": "{icon} ",
+        "format-disabled": "{icon} ",
+        
+        "format-icons": {
+            "wifi": ["󰤟", "󰤢", "󰤥","󰤨"],
+            "ethernet": "󰈀",
+            "disconnected": "󰤭",
+            "disabled": "󰤭",
+        },
+        
+        "tooltip": true,
+        "tooltip-format-wifi": "{essid}: {signalStrength}%",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected...",
+        "tooltip-format-disabled": "Disabled...",
+        
+        "on-click": "foot -e nmtui",
+    },
+    
+    "temperature": {
+        "format": "󰍛 {temperatureC}°C"
+    },
+    
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": {
+            "default": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
+            "charging": ["󰂄"]
+        }
+    },
+    
+    "clock": {
+        "format": "{:%a, %d %b %H:%M}",
+        "tooltip": false
+    },
+    
+    "hyprland/workspaces": {
+        "format": "{name} {icon} ",
+        "format-icons": {
+            "1": "󰅬",
+            "2": "󰈹",
+            "3": "󰅱",
+            "4": "󰎁",
+            "5": "󰭹",
+        },
+    },
+    
+    "custom/launcher": {
+        "format": "󰣇 ",
+        "tooltip": false,
+        
+        "on-click": "exec fuzzel",
+    },
+}
